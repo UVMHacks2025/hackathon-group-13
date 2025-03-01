@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
+    <div class="header">
+        <h1>Rally Cat's Cupboard</h1>
+        <img src="{{ url_for('static', filename='rally_cat_cupboard.png') }}" alt="Logo" class="logo">
+    </div>
     <a href="/new_item">Add a new food type</a>
     <form id="inventory-form" method="post">
         <div class="add_remove">

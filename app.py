@@ -33,4 +33,4 @@ if __name__ =='__main__':
     # create_db.add_live_food(cur, 1, 'orange', '2025-01-12', 2, "L1")
     # res = create_db.search_item_by(cur, 'name', 'orange')
     # print(res[0])
-    app.run()
+    app.run(debug=True)
