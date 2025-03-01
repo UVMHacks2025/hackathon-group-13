@@ -27,7 +27,7 @@ if __name__ == "__main__":
     ]
 
     example_stock = [
-        {"name": "oranges", "exp_date": "2025-04-01", 
+        {"name": "Oranges", "exp_date": "2025-04-01", 
          "quantity": 10, "location": "pantry"},
         {"name": "Apples", "exp_date": "2025-04-10", 
          "quantity": 3, "location": "pantry"},

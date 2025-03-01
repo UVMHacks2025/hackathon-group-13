@@ -22,10 +22,12 @@
     </form>
 
     <hr>
-    <div class="searchbar">
-        <input type="text" placeholder="Search">
-        <button id="search-button">search</button>
-    </div>
+        <form id="search-bar" method="post">
+            <div class="searchbar">
+                <input type="text" name="search_query" placeholder="Search">
+                <button name = "submit_type" value="search"id="search-button">search</button>
+            </div>
+        </form>
     <hr>
     <form id="stock-form" method="post">
         <div class="dataset">

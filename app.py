@@ -15,7 +15,7 @@ def home():
             exp_date = request.form.get("expiration-date")
             location = request.form.get("location")
             db_utils.add_live_food(name, quantity, exp_date, location)
-        else:
+        elif request.form.get("submit_type") == "remove":
             stock_item = request.form.get("stock_item").strip("()").replace(",", "").replace("'", "").split()
             item_id = stock_item[0]
             num_taken = int(request.form.get("num_taken"))
@@ -24,6 +24,11 @@ def home():
                 db_utils.update_live("quantity", current_quantity - num_taken, item_id)
             else:
                 db_utils.delete_live(item_id)
+        else:
+            search_item = request.form.get("search_query")
+            values = db_utils.search_item_by('name', search_item)
+            results = values
+            return render_template('item_inventory.html', results=results)
 
     results = db_utils.get_db()
     

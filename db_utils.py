@@ -6,7 +6,7 @@ cur = con.cursor()
 
 
 def search_item_by(type, food_item):
-    query = f"Select food_info.name, food_info.food_type, food_info.allergens, food_info.is_kosher, food_info.is_hallal, food_info.is_vegetarian, food_info.is_vegan, stock_info.exp_date, stock_info.quantity, stock_info.location, stock_info.item_id FROM food_info inner join stock_info on stock_info.name = food_info.name WHERE food_info.{type}='{food_item}'"
+    query = f"Select food_info.name, food_info.food_type, food_info.is_common_allergen, food_info.is_kosher, food_info.is_hallal, food_info.is_vegetarian, food_info.is_vegan, stock_info.exp_date, stock_info.quantity, stock_info.location, stock_info.item_id FROM food_info inner join stock_info on stock_info.name = food_info.name WHERE food_info.{type}='{food_item}'"
     res = cur.execute(query)
     x = res.fetchall()
     return x 
