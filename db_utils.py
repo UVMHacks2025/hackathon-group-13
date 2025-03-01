@@ -1,7 +1,7 @@
 import sqlite3
 
 # Establishing connection to db
-con = sqlite3.connect("food-bank.db")
+con = sqlite3.connect("food-bank.db", check_same_thread=False)
 cur = con.cursor()
 
 
@@ -41,6 +41,6 @@ def delete_live(item_id):
 
 
 def get_db():
-    query = "SELECT * FROM stock_items"
+    query = "SELECT * FROM food_info"
     res = cur.execute(query)
     return res.fetchall()
