@@ -15,11 +15,8 @@ def home():
         quantity = request.form.get("quantity")
         expr_date = request.form.get("expiration-date")
         location = request.form.get("location")
+
         
-        results.append(name)
-        results.append(quantity)
-        results.append(expr_date)
-        results.append(location)
     
     return render_template('item_inventory.html', results=results)
 
