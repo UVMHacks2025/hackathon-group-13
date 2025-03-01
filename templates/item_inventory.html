@@ -7,12 +7,13 @@
     <title>Item Inventory</title>
 </head>
 <body>
+    <a href="/new_item">Add a new food type</a>
     <form id="inventory-form" method="post">
         <div class="add_remove">
-            <input type="text" name='test'placeholder="Name" required>
-            <input type="text" placeholder="Quantity" required>
-            <input type="text" placeholder="Expiration Date" required>
-            <input type="text" placeholder="Location" required>
+            <input type="text" name='name'placeholder="Name" required>
+            <input type="text" name='quantity'placeholder="Quantity" required>
+            <input type="text" name='expiration-date' placeholder="Expiration Date" required>
+            <input type="text" name='location'placeholder="Location" required>
             <button type="submit" id="add-button">add</button>
             <button type="button" id="remove-button">remove</button>
         </div>
@@ -25,6 +26,13 @@
     <hr>
     <div class="dataset">
         <h1>data table will go here...</h1>
+        {% if results %}
+        <ul>
+            {% for result in results%}
+                <p>{{ result }}<p>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </div>
 </body>
 </html>
