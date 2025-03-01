@@ -9,14 +9,23 @@ def home():
     results= []
 
     if request.method == "POST":
-        name = request.form.get("name")
-        quantity = request.form.get("quantity")
-        exp_date = request.form.get("expiration-date")
-        location = request.form.get("location")
-        db_utils.add_live_food(name, quantity, exp_date, location)
+        if request.form.get("submit_type") == "add":
+            name = request.form.get("name")
+            quantity = request.form.get("quantity")
+            exp_date = request.form.get("expiration-date")
+            location = request.form.get("location")
+            db_utils.add_live_food(name, quantity, exp_date, location)
+        else:
+            stock_item = request.form.get("stock_item").strip("()").replace(",", "").replace("'", "").split()
+            item_id = stock_item[0]
+            num_taken = int(request.form.get("num_taken"))
+            current_quantity = int(db_utils.get_val("quantity", item_id)[0])
+            if current_quantity - num_taken > 0:
+                db_utils.update_live("quantity", current_quantity - num_taken, item_id)
+            else:
+                db_utils.delete_live(item_id)
 
     results = db_utils.get_db()
-    print(results)
     
     return render_template('item_inventory.html', results=results)
 

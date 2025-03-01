@@ -17,8 +17,7 @@
             <input type="text" name='quantity'placeholder="Quantity" required>
             <input type="text" name='expiration-date' placeholder="Expiration Date" required>
             <input type="text" name='location'placeholder="Location" required>
-            <button type="submit" name="add" id="add-button">add</button>
-            <button type="submit" name="remove" id="remove-button">remove</button>
+            <button type="submit" name="submit_type" id="add-button" value="add">add</button>
         </div>
     </form>
     <hr>
@@ -27,16 +26,20 @@
         <button id="search-button">search</button>
     </div>
     <hr>
-    <div class="dataset">
-        <h1>data table will go here...</h1>
-        {% if results %}
-        <ul>
-            {% for result in results%}
-                <input type="radio" id="{{ result }}" name="stock_item" value="{{ result }}">
-                <label for="{{ result }}">{{ result }}</label><br>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
+    <form id="stock-form" method="post">
+        <div class="dataset">
+            <h1>data table will go here...</h1>
+            {% if results %}
+            <ul>
+                {% for result in results%}
+                    <input type="radio" id="{{ result }}" name="stock_item" value="{{ result }}">
+                    <label for="{{ result }}">{{ result }}</label><br>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <input type="number" name="num_taken" placeholder="Quantity Taken" required>
+        <button type="submit" name="submit_type" id="remove-button" value="remove">remove</button>
+    </form>
 </body>
 </html>
