@@ -6,16 +6,16 @@
     <title>Item Inventory</title>
 </head>
 <body>
-    <a href="./subpage">Add New Food Type</a>
-    <br><br>
-    <div class="add_remove">
-        <input type="text" placeholder="Name" required>
-        <input type="text" placeholder="Quantity" required>
-        <input type="text" placeholder="Expiration Date" required>
-        <input type="text" placeholder="Quantity" required>
-        <button id="add-button">add</button>
-        <button id="add-button">remove</button>
-    </div>
+    <form id="inventory-form">
+        <div class="add_remove">
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Quantity" required>
+            <input type="text" placeholder="Expiration Date" required>
+            <input type="text" placeholder="Location" required>
+            <button type="submit" id="add-button">add</button>
+            <button type="button" id="remove-button">remove</button>
+        </div>
+    </form>
     <hr>
     <div class="searchbar">
         <input type="text" placeholder="Search">
