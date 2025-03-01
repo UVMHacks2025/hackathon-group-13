@@ -20,8 +20,8 @@ def add_food(name, food_type, allergens, is_kosher, is_hallal, is_vegetarian, is
     con.commit()
 
 
-def add_live_food(item_id, name, exp_date, quantity, location):
-    query = f"INSERT INTO stock_info VALUES('{item_id}', '{name}', '{exp_date}', {quantity}, '{location}')"
+def add_live_food(name, exp_date, quantity, location):
+    query = f"INSERT INTO stock_info (name, exp_date, quantity, location) VALUES ('{name}', '{exp_date}', {quantity}, '{location}')"
     res = cur.execute(query)
     x = res.rowcount
     assert x == 1
@@ -41,6 +41,6 @@ def delete_live(item_id):
 
 
 def get_db():
-    query = "SELECT * FROM food_info"
+    query = "SELECT * FROM stock_info"
     res = cur.execute(query)
     return res.fetchall()

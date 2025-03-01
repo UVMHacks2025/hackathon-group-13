@@ -41,4 +41,6 @@ if __name__ == "__main__":
                           food["is_common_allergen"], food["is_kosher"],
                           food["is_hallal"], food["is_vegetarian"],
                           food["is_vegan"])
+    for stock in example_stock:
+        db_utils.add_live_food(stock["name"], stock["exp_date"], stock["quantity"], stock["location"])
     print("Finished")

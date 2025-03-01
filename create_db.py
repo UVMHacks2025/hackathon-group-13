@@ -22,7 +22,7 @@ def create_stock_table(cur: sqlite3.Cursor):
     
     cur.execute('''
                 CREATE TABLE stock_info(
-                item_id INT AUTO_INCREMENT PRIMARY KEY, 
+                item_id INTEGER PRIMARY KEY, 
                 name VARCHAR(100),
                 exp_date DATE,
                 quantity INTEGER,

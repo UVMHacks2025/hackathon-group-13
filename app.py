@@ -11,10 +11,12 @@ def home():
     if request.method == "POST":
         name = request.form.get("name")
         quantity = request.form.get("quantity")
-        expr_date = request.form.get("expiration-date")
+        exp_date = request.form.get("expiration-date")
         location = request.form.get("location")
+        db_utils.add_live_food(name, quantity, exp_date, location)
 
     results = db_utils.get_db()
+    print(results)
     
     return render_template('item_inventory.html', results=results)
 
