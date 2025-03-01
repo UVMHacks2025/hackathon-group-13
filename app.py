@@ -21,9 +21,6 @@ def home():
     return render_template('item_inventory.html', results=results)
 
 
-@app.route("/new_item", methods=['GET', 'POST'])
-def new_item():        
-    return render_template('new_item.html')
 
 if __name__ =='__main__':
     # create_db.create_food_info_table(cur=cur)

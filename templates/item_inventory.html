@@ -7,10 +7,10 @@
 </head>
 <body>
     <div class="header">
-        <h1>Rally Cat's Cupboard</h1>
+        <h1>Rally Cat's Cupboard Inventory</h1>
         <img src="{{ url_for('static', filename='rally_cat_cupboard.png') }}" alt="Logo" class="logo">
     </div>
-    <a href="/new_item">Add a new food type</a>
+    <br><hr>
     <form id="inventory-form" method="post">
         <div class="add_remove">
             <input type="text" name='name'placeholder="Name" required>
@@ -21,12 +21,17 @@
             <button type="button" id="remove-button">remove</button>
         </div>
     </form>
+
     <hr>
+
+    <!--- SEARCHBAR
     <div class="searchbar">
         <input type="text" placeholder="Search">
         <button id="search-button">search</button>
     </div>
     <hr>
+    -->
+
     <div class="dataset">
         <h1>data table will go here...</h1>
         {% if results %}

@@ -6,25 +6,66 @@ body {
     background-color: #f9f9f9;
 }
 
-a {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-a:hover {
-    background-color: #45a049;
-}
-
 .header {
     display: inline;
 }
 
 img {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
+    display: grid;
+    align-items: center;
 }
+
+#inventory-form {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .add_remove {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto auto;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #add-button, #remove-button {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 32px;
+  }
+  
+  #add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  #remove-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+
+  #add-button:hover {
+    background-color: #326734;
+    color: white;
+    border: none;
+  }
+
+  #remove-button:hover {
+    background-color: #9d3129;
+    color: white;
+    border: none;
+  }
