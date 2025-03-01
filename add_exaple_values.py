@@ -26,6 +26,15 @@ if __name__ == "__main__":
          "is_hallal": True, "is_vegetarian": True, "is_vegan": False}
     ]
 
+    example_stock = [
+        {"name": "oranges", "exp_date": "2025-04-01", 
+         "quantity": 10, "location": "pantry"},
+        {"name": "Apples", "exp_date": "2025-04-10", 
+         "quantity": 3, "location": "pantry"},
+        {"name": "Pork chops", "exp_date": "2025-04-06", 
+         "quantity": 5, "location": "freezer"}
+    ]
+
     print("Adding example foods to table...")
     for food in example_foods:
         db_utils.add_food(food["name"], food["food_type"],
