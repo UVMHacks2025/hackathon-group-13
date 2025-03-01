@@ -31,8 +31,18 @@ if __name__ == "__main__":
          "quantity": 10, "location": "pantry"},
         {"name": "Apples", "exp_date": "2025-04-10", 
          "quantity": 3, "location": "pantry"},
-        {"name": "Pork chops", "exp_date": "2025-04-06", 
-         "quantity": 5, "location": "freezer"}
+        {"name": "Chicken breast", "exp_date": "2025-04-06", 
+         "quantity": 5, "location": "freezer"},
+         {"name": "Eggs", "exp_date": "2025-03-10", 
+         "quantity": 7, "location": "fridge"},
+         {"name": "Bacon", "exp_date": "2025-03-06", 
+         "quantity": 3, "location": "fridge"},
+         {"name": "Apples", "exp_date": "2025-04-15", 
+         "quantity": 3, "location": "pantry"},
+         {"name": "Apples", "exp_date": "2025-05-10", 
+         "quantity": 3, "location": "pantry"},
+         {"name": "Bacon", "exp_date": "2025-06-06", 
+         "quantity": 3, "location": "fridge"},
     ]
 
     print("Adding example foods to table...")
