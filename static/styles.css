@@ -19,3 +19,12 @@ a {
 a:hover {
     background-color: #45a049;
 }
+
+.header {
+    display: inline;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
