@@ -76,7 +76,7 @@ if __name__ == "__main__":
     update_live('quantity', 3, 2)
 
     x = search_item_by('name', 'apple')
-    print(x)
+    print(type(x))
 
     # delete_live(2)
     # x = search_item_by('name', 'apple')
