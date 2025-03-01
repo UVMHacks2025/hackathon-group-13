@@ -38,3 +38,9 @@ def delete_live(item_id):
     query = f"DELETE FROM stock_info where stock_info.item_id = {item_id}"
     cur.execute(query)
     con.commit()
+
+
+def get_db():
+    query = "SELECT * FROM stock_items"
+    res = cur.execute(query)
+    return res.fetchall()
