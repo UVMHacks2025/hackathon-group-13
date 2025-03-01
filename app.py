@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request
-import create_db
-import sqlite3
+import db_utils
 
 app = Flask(__name__)
-con = sqlite3.connect("food-bank.db")
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -16,7 +14,7 @@ def home():
         expr_date = request.form.get("expiration-date")
         location = request.form.get("location")
 
-        
+    results = db_utils.get_db()
     
     return render_template('item_inventory.html', results=results)
 
@@ -26,7 +24,6 @@ def new_item():
     return render_template('new_item.html')
 
 if __name__ =='__main__':
-    cur = con.cursor()
     # create_db.create_food_info_table(cur=cur)
     # create_db.create_stock_table(cur=cur)
     # create_db.add_food(cur, 'orange', 'fruit', 'orange', True, True, True, True)
