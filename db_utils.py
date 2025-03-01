@@ -39,10 +39,17 @@ def delete_live(item_id):
     cur.execute(query)
     con.commit()
 
+
 def get_val(col, item_id):
     query = f"SELECT {col} FROM stock_info WHERE item_id = {item_id}"
     res = cur.execute(query)
     return res.fetchone()
+
+
+def match_expiring():
+    query = "SELECT * FROM stock_info ORDER BY exp_date"
+    res = cur.execute(query)
+    return res.fetchall()
 
 
 def get_db():

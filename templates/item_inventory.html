@@ -29,8 +29,13 @@
             </div>
         </form>
     <hr>
+    <form id="expire-filter" method="post">
+        <div class="expirefilter">
+            <button name = "submit_type" value="expire_filter"id="expire-filter-button">Sort By Expiration Date</button>
+        </div>
+    </form>
     <form id="stock-form" method="post">
-        <div class="dataset">
+        <div class="stockform">
             <h1>data table will go here...</h1>
             {% if results %}
             <ul>

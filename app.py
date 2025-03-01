@@ -24,6 +24,9 @@ def home():
                 db_utils.update_live("quantity", current_quantity - num_taken, item_id)
             else:
                 db_utils.delete_live(item_id)
+        elif request.form.get("submit_type") == "expire_filter":
+            results = db_utils.match_expiring()
+            return render_template('item_inventory.html', results=results)
         else:
             search_item = request.form.get("search_query")
             values = db_utils.search_item_by('name', search_item)
