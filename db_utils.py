@@ -17,6 +17,7 @@ def add_food(name, food_type, allergens, is_kosher, is_hallal, is_vegetarian, is
     res = cur.execute(query)
     x = res.rowcount
     assert x == 1
+    con.commit()
 
 
 def add_live_food(item_id, name, exp_date, quantity, location):
@@ -24,14 +25,16 @@ def add_live_food(item_id, name, exp_date, quantity, location):
     res = cur.execute(query)
     x = res.rowcount
     assert x == 1
+    con.commit()
 
 
 def update_live(col, value, item_id):
     query = f"UPDATE stock_info set {col} = {value} WHERE stock_info.item_id = {item_id}"
     cur.execute(query)
+    con.commit()
 
 
 def delete_live(item_id):
     query = f"DELETE FROM stock_info where stock_info.item_id = {item_id}"
     cur.execute(query)
-
+    con.commit()

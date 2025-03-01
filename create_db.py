@@ -6,12 +6,12 @@ def create_food_info_table(cur: sqlite3.Cursor):
 
     cur.execute('''
                 CREATE TABLE food_info(
-                name VARCHAR(100), 
-                food_type VARCHAR(100), 
-                allergens VARCHAR(100), 
-                is_kosher BOOLEAN, 
-                is_hallal BOOLEAN, 
-                is_vegetarian BOOLEAN, 
+                name VARCHAR(100),
+                food_type VARCHAR(100),
+                is_common_allergen BOOLEAN,
+                is_kosher BOOLEAN,
+                is_hallal BOOLEAN,
+                is_vegetarian BOOLEAN,
                 is_vegan BOOLEAN
                 )
                 ''')
@@ -23,9 +23,9 @@ def create_stock_table(cur: sqlite3.Cursor):
     cur.execute('''
                 CREATE TABLE stock_info(
                 item_id INT, 
-                name VARCHAR(100), 
-                exp_date DATE, 
-                quantity INTEGER, 
+                name VARCHAR(100),
+                exp_date DATE,
+                quantity INTEGER,
                 location VARCHAR(100)
                 )
                 ''')
