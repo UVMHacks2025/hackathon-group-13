@@ -17,8 +17,8 @@
             <input type="text" name='quantity'placeholder="Quantity" required>
             <input type="text" name='expiration-date' placeholder="Expiration Date" required>
             <input type="text" name='location'placeholder="Location" required>
-            <button type="submit" id="add-button">add</button>
-            <button type="button" id="remove-button">remove</button>
+            <button type="submit" name="add" id="add-button">add</button>
+            <button type="submit" name="remove" id="remove-button">remove</button>
         </div>
     </form>
     <hr>
@@ -32,7 +32,8 @@
         {% if results %}
         <ul>
             {% for result in results%}
-                <p>{{ result }}<p>
+                <input type="radio" id="{{ result }}" name="stock_item" value="{{ result }}">
+                <label for="{{ result }}">{{ result }}</label><br>
             {% endfor %}
         </ul>
         {% endif %}
