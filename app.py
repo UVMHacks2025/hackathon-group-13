@@ -27,10 +27,10 @@ def new_item():
 
 if __name__ =='__main__':
     cur = con.cursor()
-    create_db.create_food_info_table(cur=cur)
-    create_db.create_stock_table(cur=cur)
-    create_db.add_food(cur, 'orange', 'fruit', 'orange', True, True, True, True)
-    create_db.add_live_food(cur, 1, 'orange', '2025-01-12', 2, "L1")
-    res = create_db.search_item_by(cur, 'name', 'orange')
-    print(res[0])
+    # create_db.create_food_info_table(cur=cur)
+    # create_db.create_stock_table(cur=cur)
+    # create_db.add_food(cur, 'orange', 'fruit', 'orange', True, True, True, True)
+    # create_db.add_live_food(cur, 1, 'orange', '2025-01-12', 2, "L1")
+    # res = create_db.search_item_by(cur, 'name', 'orange')
+    # print(res[0])
     app.run()
